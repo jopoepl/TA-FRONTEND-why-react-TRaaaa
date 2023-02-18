@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>MAGAZINE</h1>
+    <div class="card">
+
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-    let cardInfo = {
+let cardInfo = {
   title: 'City Lights in New York',
   date: new Date('2017-01-26'),
   comments: 67,
@@ -21,13 +27,41 @@
   imageURL:
     'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
 };
-        <section>
-                <figure>
-                    <img src={cardInfo.imageURL} alt="" />
-                    <span class="date-icon">{cardInfo.date}</span>
+let rootui = document.querySelector(`.card`);
+       let card = (
+        <section className="container">
+        <figure>
+                    <img src={cardInfo.imageURL} alt="ABC" />
+                    <span class="date-icon">{cardInfo.date.getDate()}</span>
                     <figcaption>{cardInfo.category}</figcaption>
-                </figure>
-                <div>
+        </figure>
+        <div>
+        <h1>{cardInfo.title}</h1>
+                    <h3>{cardInfo.subTitle}</h3>
+                    <p>
+                        {cardInfo.description}
+                    </p>
+                    <div>
+                        <span>{cardInfo.date.getMonth()}</span>
+                        <span>{cardInfo.comments}</span>
+                    </div>
+    </div>
+</section>
+       )
+        ReactDOM.render(card, rootui)
+        </script>
+   
+</body>
+</html>
+
+
+<!-- 
+    <div>
+        <figure>
+                    <img src={cardInfo.imageURL} alt="" />
+                        <span class="date-icon">{cardInfo.date}</span>
+                    <figcaption>{cardInfo.category}</figcaption>
+        </figure>
                     <h1>{cardInfo.title}</h1>
                     <h3>{cardInfo.subTitle}</h3>
                     <p>
@@ -37,11 +71,5 @@
                         <span>{new Date()}</span>
                         <span>{cardInfo.comments}</span>
                     </div>
-                </div>
-
-        </section>
-    </script>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-</body>
-</html>
+    </div>
+ -->
